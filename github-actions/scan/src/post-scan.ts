@@ -62,7 +62,7 @@ export async function uploadArtifact(context: LaunchContext, name: string, paths
         const artifactName = name;
         const options = { continueOnError: true };
 
-        const rootDirectory = context.runtimeFolder;
+        const rootDirectory = context.workspaceFolder;
         core.debug('rootDirectory: ' + rootDirectory);
         if (core.isDebug()){
             shell.exec(`ls ${rootDirectory}`);

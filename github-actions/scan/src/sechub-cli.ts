@@ -10,7 +10,7 @@ import * as core from '@actions/core';
  * @param context: launch context
  */
 export function scan(format: string, context: LaunchContext) {
-    const shellString =  shell.exec(`${context.clientExecutablePath} -configfile ${context.configFileLocation} -output ${context.runtimeFolder} -reportformat ${format} scan`);
+    const shellString =  shell.exec(`${context.clientExecutablePath} -configfile ${context.configFileLocation} -output ${context.workspaceFolder} -reportformat ${format} scan`);
     context.lastClientExitCode= shellString.code;
 
     if (context.lastClientExitCode!=0){
